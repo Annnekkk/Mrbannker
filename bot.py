@@ -39,8 +39,8 @@ BOT_ID = bot_info.id
 
 # USE YOUR ROTATING PROXY API IN DICT FORMAT http://user:pass@providerhost:port
 proxies = {
-           'http': 'http://scraperapi:008c28af6da10791a38f6a861d01c531@proxy-server.scraperapi.com:8001/',
-           'https': 'http://scraperapi:008c28af6da10791a38f6a861d01c531@proxy-server.scraperapi.com:8001/'
+           'http': 'http://scraperapi:008c28af6da10791a38f6a861d01c531@proxy-server.scraperapi.com:8001',
+           'https': 'http://scraperapi:008c28af6da10791a38f6a861d01c531@proxy-server.scraperapi.com:8001'
 }
 
 session = requests.Session()
